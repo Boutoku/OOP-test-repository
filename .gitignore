@@ -1,4 +1,4 @@
 ### IntelliJ IDEA ###
-.idea/
-out/
-*.iml
+/.idea/
+/out/
+/oop-test1-A.iml
