@@ -1,16 +1,16 @@
 import java.util.HashSet;
 
 public class ContactManager {
-    private HashSet<Contact> clients;
+    private HashSet<Contact> contacts;
 
     public ContactManager() {
-        this("clients.csv");
+        this("contacts.csv");
     }
 
     public ContactManager(String file) {
-        clients = new HashSet<>();
+        contacts = new HashSet<>();
         ContactReader kr = new ContactReader(file);
-        clients = kr.loadClients();
+        contacts = kr.loadContacts();
     }
 }
 

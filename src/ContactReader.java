@@ -21,7 +21,7 @@ public class ContactReader {
     private ArrayList<ContactEntry> entries;
 
     public ContactReader() {
-        this("clients.csv");
+        this("contacts.csv");
     }
 
     public ContactReader(String filename) {
@@ -61,7 +61,7 @@ public class ContactReader {
         }
     }
 
-    public HashSet<Contact> loadClients() {
+    public HashSet<Contact> loadContacts() {
         HashSet<Contact> klanten = new HashSet<>();
         for(ContactEntry ke : getEntries()) {
             String[] data = ke.getData();
