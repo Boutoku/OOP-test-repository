@@ -2,7 +2,7 @@
  *
  * @author marc
  */
-public class ClientEntry {
+public class ContactEntry {
     private String[] dataValues;
     
     public static final int ID = 0;
@@ -18,12 +18,12 @@ public class ClientEntry {
     public static final int FAX = 10;
     private static final int NUMBER_OF_FIELDS = 11;
                       
-    public ClientEntry(String klantlijn)
+    public ContactEntry(String klantlijn)
     {
         // The array to store the data for a single line.
         dataValues = new String[NUMBER_OF_FIELDS];
         // Break up the line.
-        ClientlineTokenizer tokenizer = new ClientlineTokenizer();
+        ContactlineTokenizer tokenizer = new ContactlineTokenizer();
         tokenizer.tokenize(klantlijn,dataValues);
     }
     

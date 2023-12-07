@@ -16,15 +16,15 @@ import java.util.HashSet;
  * @author Marc De Caluwé
  * @version 2019-12-01
  */
-public class ClientReader {
+public class ContactReader {
     private String format;
-    private ArrayList<ClientEntry> entries;
+    private ArrayList<ContactEntry> entries;
 
-    public ClientReader() {
+    public ContactReader() {
         this("clients.csv");
     }
 
-    public ClientReader(String filename) {
+    public ContactReader(String filename) {
         // The format for the data.
         format = "CustomerID;Namelient;NameContact;TitleContact;Addresd;City;Region;ZIP;Country;Phone;Fax";
         // Where to store the data.
@@ -39,7 +39,7 @@ public class ClientReader {
             while (klantfile.hasNextLine()) {
                 String klantlijn = klantfile.nextLine();
                 // Splits de klant en maak er een nieuw Klant-object van
-                ClientEntry entry = new ClientEntry(klantlijn);
+                ContactEntry entry = new ContactEntry(klantlijn);
                 entries.add(entry);
             }
             klantfile.close();
@@ -48,7 +48,7 @@ public class ClientReader {
         }
     }
 
-    public ArrayList<ClientEntry> getEntries() {
+    public ArrayList<ContactEntry> getEntries() {
         return entries;
     }
 
@@ -56,22 +56,21 @@ public class ClientReader {
      * Print de data.
      */
     public void printData() {
-        for (ClientEntry entry : entries) {
+        for (ContactEntry entry : entries) {
             System.out.println(entry);
         }
     }
 
-    public HashSet<Client> loadClients() {
-        HashSet<Client> klanten = new HashSet<>();
-        for(ClientEntry ke : getEntries()) {
+    public HashSet<Contact> loadClients() {
+        HashSet<Contact> klanten = new HashSet<>();
+        for(ContactEntry ke : getEntries()) {
             String[] data = ke.getData();
-            Client k = new Client(data[ClientEntry.ID]);
-            k.setName(data[ClientEntry.NAMECLIENT]);
-            k.setNameContact(data[ClientEntry.NAMECONTACT]);
-            k.setTitleContact(data[ClientEntry.TITLECONTACT]);
-            k.setCity(data[ClientEntry.CITY]);
-            k.setRegion(data[ClientEntry.REGION]);
-            k.setCountry(data[ClientEntry.COUNTRY]);
+            Contact k = new Contact(data[ContactEntry.ID]);
+            k.setName(data[ContactEntry.NAMECONTACT]);
+            k.setTitle(data[ContactEntry.TITLECONTACT]);
+            k.setCity(data[ContactEntry.CITY]);
+            k.setRegion(data[ContactEntry.REGION]);
+            k.setCountry(data[ContactEntry.COUNTRY]);
             klanten.add(k);
         }
         return klanten;
@@ -79,13 +78,13 @@ public class ClientReader {
 
     public static void main(String[] args) {
         try {
-            ClientReader kr = new ClientReader();
+            ContactReader kr = new ContactReader();
             kr.printData();
             System.out.println("---------------------------------------------------------------");
-            for (ClientEntry ke : kr.getEntries()) {
+            for (ContactEntry ke : kr.getEntries()) {
                 String[] data = ke.getData();
                 // we drukken het ID en bijhorende naam van elke klant
-                System.out.println("ID=" + data[ClientEntry.ID] + ",  name=" + data[ClientEntry.NAMECLIENT]);
+                System.out.println("ID=" + data[ContactEntry.ID] + ",  name=" + data[ContactEntry.NAMECLIENT]);
             }
         } catch (Exception e) {
             e.printStackTrace();

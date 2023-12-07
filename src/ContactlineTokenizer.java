@@ -7,9 +7,9 @@ import java.util.Scanner;
  * @author David J. Barnes and Michael Kolling.
  * @version 2008.03.30
  */
-public class ClientlineTokenizer {
+public class ContactlineTokenizer {
 
-    public ClientlineTokenizer() {
+    public ContactlineTokenizer() {
     }
 
     public void tokenize(String klantlijn, String[] dataLijn) {
