@@ -26,7 +26,7 @@ public class ClientReader {
 
     public ClientReader(String filename) {
         // The format for the data.
-        format = "CustomerID;NaamKlant;NaamContact;TitelContact;Adres;Stad;Regio;PostCode;Land;Telefoon;Fax";
+        format = "CustomerID;Namelient;NameContact;TitleContact;Addresd;City;Region;ZIP;Country;Phone;Fax";
         // Where to store the data.
         entries = new ArrayList<>();
 
@@ -67,9 +67,9 @@ public class ClientReader {
             String[] data = ke.getData();
             Client k = new Client(data[ClientEntry.ID]);
             k.setName(data[ClientEntry.NAMECLIENT]);
-            k.setAddress(data[ClientEntry.ADDRESS]);
+            k.setNameContact(data[ClientEntry.NAMECONTACT]);
+            k.setTitleContact(data[ClientEntry.TITLECONTACT]);
             k.setCity(data[ClientEntry.CITY]);
-            k.setZip(data[ClientEntry.ZIP]);
             k.setRegion(data[ClientEntry.REGION]);
             k.setCountry(data[ClientEntry.COUNTRY]);
             klanten.add(k);

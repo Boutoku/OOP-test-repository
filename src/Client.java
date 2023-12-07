@@ -1,10 +1,10 @@
 public class Client {
     private String ID;
     private String name;
-    private String address;
+    private String nameContact;
+    private String titleContact;
     private String city;
     private String region;
-    private String zip;
     private String country;
 
     public Client(String id) {
@@ -23,12 +23,20 @@ public class Client {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getNameContact() {
+        return nameContact;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setNameContact(String nameContact) {
+        this.nameContact = nameContact;
+    }
+
+    public String getTitleContact() {
+        return titleContact;
+    }
+
+    public void setTitleContact(String titleContact) {
+        this.titleContact = titleContact;
     }
 
     public String getCity() {
@@ -47,19 +55,15 @@ public class Client {
         this.region = region;
     }
 
-    public String getZip() {
-        return zip;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
     public String getCountry() {
         return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String toString() {
+        return nameContact + " (" + titleContact + "), " + country + " (" + city + ")";
     }
 }
