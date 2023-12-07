@@ -10,7 +10,7 @@ public class ClientManager {
     public ClientManager(String file) {
         clients = new HashSet<>();
         ClientReader kr = new ClientReader(file);
-        clients = kr.loadKlanten();
+        clients = kr.loadClients();
     }
 }
 

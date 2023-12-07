@@ -61,7 +61,7 @@ public class ClientReader {
         }
     }
 
-    public HashSet<Client> loadKlanten() {
+    public HashSet<Client> loadClients() {
         HashSet<Client> klanten = new HashSet<>();
         for(ClientEntry ke : getEntries()) {
             String[] data = ke.getData();
