@@ -48,7 +48,6 @@ public class Contact {
         return zip;
     }
     public void addRelation(Relation relation){
-
         relations.add(relation);
     }
     public int getNumberOfRelations(){
@@ -57,6 +56,11 @@ public class Contact {
             relationCount++;
         }
         return relationCount;
+    }
+    public String getRelationsList(){
+        for (Relation r : relations) {
+        }
+        return relations.toString();
     }
 
     public void setZip(String zip) {
