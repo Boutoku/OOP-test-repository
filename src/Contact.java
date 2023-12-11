@@ -13,6 +13,7 @@ public class Contact {
 
     public Contact(String id) {
         ID = id;
+        relations = new HashSet<>();
     }
 
     public String getID() {
@@ -47,8 +48,15 @@ public class Contact {
         return zip;
     }
     public void addRelation(Relation relation){
-        relations = new HashSet<>();
+
         relations.add(relation);
+    }
+    public int getNumberOfRelations(){
+        int relationCount = 0;
+        for (Relation r : relations) {
+            relationCount++;
+        }
+        return relationCount;
     }
 
     public void setZip(String zip) {

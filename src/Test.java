@@ -13,7 +13,7 @@ public class Test {
         System.out.println(r.toString());
         */
 
-        /*
+
         Contact c = new Contact("QUICK");
         Relation r1 = new Relation("Yvonne Moncada", "only met once with a small talk", 3);
         Relation r2 = new Relation("Marie Bertrand", "very important cotact", 5);
@@ -25,8 +25,6 @@ public class Test {
         c.addRelation(r3);
         c.addRelation(r4);
         c.addRelation(r5);
-        */
-
-
+        System.out.println(c.getNumberOfRelations());
     }
 }
