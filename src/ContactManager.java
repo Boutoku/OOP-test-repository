@@ -17,5 +17,6 @@ public class ContactManager {
             System.out.println(c);
         }
     }
+
 }
 
