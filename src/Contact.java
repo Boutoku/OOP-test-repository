@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class Contact {
     private String ID;
     private String name;
@@ -6,6 +9,7 @@ public class Contact {
     private String zip;
     private String region;
     private String country;
+    HashSet<Relation> relations;
 
     public Contact(String id) {
         ID = id;
@@ -41,6 +45,10 @@ public class Contact {
 
     public String getZip() {
         return zip;
+    }
+    public void addRelation(Relation relation){
+        relations = new HashSet<>();
+        relations.add(relation);
     }
 
     public void setZip(String zip) {
