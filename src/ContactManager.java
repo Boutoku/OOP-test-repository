@@ -12,5 +12,12 @@ public class ContactManager {
         ContactReader kr = new ContactReader(file);
         contacts = kr.loadContacts();
     }
+    public int getNumberOfContacts(){
+        int aantalContacten = 0;
+        for (Contact c : contacts) {
+            aantalContacten++;
+        }
+        return aantalContacten;
+    }
 }
 
