@@ -12,5 +12,8 @@ public class ContactManager {
         ContactReader kr = new ContactReader(file);
         contacts = kr.loadContacts();
     }
+    public void printContacts(){
+        contacts.forEach(contact -> System.out.println(contact));
+    }
 }
 
