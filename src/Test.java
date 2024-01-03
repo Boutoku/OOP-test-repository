@@ -1,12 +1,15 @@
 public class Test {
     public static void main(String[] args) {
 
-       /*ContactManager cm = new ContactManager();
+       /*
+       ContactManager cm = new ContactManager();
        cm.printContacts();
 
        Relation r = new Relation("Yvonne Moncada", "only met once with a small talk", 3);
-       System.out.println(r.toString());*/
+       System.out.println(r.toString());
+       */
 
+        /*
         Contact c = new Contact("QUICK");
         Relation r1 = new Relation("Yvonne Moncada", "only met once with a small talk", 3);
         Relation r2 = new Relation("Marie Bertrand", "very important contact", 5);
@@ -23,7 +26,16 @@ public class Test {
 
 
         System.out.println(c.getNumberOfRelations());
+        */
+        ContactManager cm = new ContactManager();
 
+        try {
+            Contact cnew = cm.getContact("Marie Bertrand");
+            System.out.println(cnew);
+            cnew = cm.getContact("Sofia Alcanat");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
