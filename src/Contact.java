@@ -33,8 +33,12 @@ public class Contact {
         return numberOfRelations;
     }
 
-    public void printRelations() {
-        relationsMap.forEach(System.out::println);
+    public String getRelationsList() {
+        StringBuilder relationsStringBuilder = new StringBuilder();
+        for (Relation relation : relationsMap) {
+            relationsStringBuilder.append(relation.toString()).append("\n");
+        }
+        return relationsStringBuilder.toString();
     }
 
     public String getID() {

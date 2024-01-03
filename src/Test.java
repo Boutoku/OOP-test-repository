@@ -19,7 +19,8 @@ public class Test {
         c.addRelation(r4);
         c.addRelation(r5);
 
-        c.printRelations();
+        System.out.println(c.getRelationsList());
+
 
         System.out.println(c.getNumberOfRelations());
 
