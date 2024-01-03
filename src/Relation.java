@@ -31,8 +31,15 @@ public class Relation {
     public void setStars(int stars) {
         this.stars = stars;
     }
+
     public String toString(){
-        return "Relation with " + getName() + " (" + getDescription().substring(0, 9) + "...) - "
-                + "*".repeat(stars);
+        String description = getDescription();
+        if (description.length() > 10) {
+            return "Relation with " + getName() + " (" + description.substring(0, 10) + "...) - "
+                    + "*".repeat(stars);
+        } else {
+            return "Relation with " + getName() + " (" + description + ") - "
+                    + "*".repeat(stars);
+        }
     }
 }

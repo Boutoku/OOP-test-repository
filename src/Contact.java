@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class Contact {
     private String ID;
     private String name;
@@ -6,11 +8,28 @@ public class Contact {
     private String zip;
     private String region;
     private String country;
+    private HashSet<Relation> relationsMap = new HashSet<>();
 
     public Contact(String id) {
         ID = id;
     }
 
+    public void addRelation(Relation relation) {
+        boolean exists = false;
+        for (Relation rel : relationsMap) {
+            if (rel.getName().equals(relation.getName())) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (!exists) {
+            relationsMap.add(relation);
+        }
+    }
+    public void printRelations(){
+        relationsMap.forEach(System.out::println);
+    }
     public String getID() {
         return ID;
     }
