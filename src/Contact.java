@@ -15,21 +15,28 @@ public class Contact {
     }
 
     public void addRelation(Relation relation) {
-        boolean exists = false;
         for (Relation rel : relationsMap) {
             if (rel.getName().equals(relation.getName())) {
-                exists = true;
+                relationsMap.remove(rel); // Remove the existing relation
                 break;
             }
         }
-
-        if (!exists) {
-            relationsMap.add(relation);
-        }
+        relationsMap.add(relation); // Add the new relation
     }
-    public void printRelations(){
+
+
+    public int getNumberOfRelations(){
+        int numberOfRelations = 0;
+        for (int i = 0; i < relationsMap.size(); i++){
+            numberOfRelations++;
+        };
+        return numberOfRelations;
+    }
+
+    public void printRelations() {
         relationsMap.forEach(System.out::println);
     }
+
     public String getID() {
         return ID;
     }

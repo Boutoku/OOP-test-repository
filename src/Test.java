@@ -21,6 +21,9 @@ public class Test {
 
         c.printRelations();
 
+        System.out.println(c.getNumberOfRelations());
+
+
     }
 
 }
