@@ -20,6 +20,7 @@ public class ContactManager {
         }
         throw new Exception("no contact with name " + name);
     }
+    //push test
 
     public void printContacts(){
         contacts.forEach(contact -> System.out.println(contact));
