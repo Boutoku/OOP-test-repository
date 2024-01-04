@@ -3,6 +3,7 @@ import org.w3c.dom.ls.LSOutput;
 import javax.crypto.spec.PSource;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Map;
 
 public class ContactManager {
@@ -41,6 +42,19 @@ public class ContactManager {
                 .forEach(title -> titleCount.merge(title,1, Integer::sum));
 
         titleCount.forEach((title, count) -> System.out.println(title + "->" + count));
+    }
+    public int removeContacts(String title){
+        Iterator<Contact> iterator = contacts.iterator();
+        int removedContacts = 0;
+        while (iterator.hasNext()){
+            Contact contact = iterator.next();
+            if (contact.getTitle()!=null && contact.getTitle().equals(title)) {
+                iterator.remove();
+                removedContacts++;
+            }
+        }
+        return removedContacts;
+
     }
 }
 
