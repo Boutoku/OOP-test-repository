@@ -19,5 +19,14 @@ public class ContactManager {
         }
         return numberOfContacts;
     }
+
+    public int getNumberOfContacts(String title){
+        int numberOfContacts = 0;
+        for (Contact contact:contacts) {
+            if (contact.getTitle().equals(title))
+            numberOfContacts++;
+        }
+        return numberOfContacts;
+    }
 }
 
