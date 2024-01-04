@@ -4,6 +4,8 @@ public class Test {
         System.out.println(cm.getNumberOfContacts());
 
         System.out.println(cm.getNumberOfContacts("Owner"));
+
+        cm.printContactsPerTitle();
     }
 
 }

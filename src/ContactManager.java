@@ -1,4 +1,9 @@
+import org.w3c.dom.ls.LSOutput;
+
+import javax.crypto.spec.PSource;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 public class ContactManager {
     private HashSet<Contact> contacts;
@@ -27,6 +32,15 @@ public class ContactManager {
             numberOfContacts++;
         }
         return numberOfContacts;
+    }
+    public void printContactsPerTitle(){
+        HashMap<String, Integer> titleCount = new HashMap<>();
+        contacts.stream()
+                .map(Contact::getTitle)
+                .filter(title -> title != null)
+                .forEach(title -> titleCount.merge(title,1, Integer::sum));
+
+        titleCount.forEach((title, count) -> System.out.println(title + "->" + count));
     }
 }
 
